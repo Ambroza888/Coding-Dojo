@@ -1,0 +1,42 @@
+* {
+  outline: 2px red dotted;
+}
+.shell{
+  width: 970px;
+  min-height: 850px;
+  margin: 0 auto;
+  background-color: #3776ab;
+}
+.lefttop img{
+  width: 400px;
+  height: 120px;
+
+}
+.righttop{
+  background-color: purple;
+  display: inline-block;
+}
+.lefttop{
+  display: inline-block;
+
+}
+.midbar{
+  background-color: silver;
+  height: 50px;
+}
+.midtext{
+  background-color: burlywood;
+  height: 300px;
+}
+.midtextLEFT{
+  background-color: green;
+  height: 100%;
+  display: inline-block;
+  width: 480px;
+}
+.midtextRIGHT{
+  background-color: pink;
+  height: 100%;
+  display: inline-block;
+  width: 484px;
+}

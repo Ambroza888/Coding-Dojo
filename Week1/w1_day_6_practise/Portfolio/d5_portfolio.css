@@ -1,0 +1,230 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  /* list-style: none; */
+  /* outline: 2px dotted black; */
+  /* text-decoration: none; */
+}
+.shell{
+  margin: 0 auto;
+  width: 970px;
+  background-image: radial-gradient(#26151a,#6f5964,#0b1022)
+}
+.shell_header{
+  min-height: 50px;
+  background-image: radial-gradient(#a4a1a7,#c3c3c8,#a7a4a9);
+
+}
+.shell_header h1{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+  display: inline-block;
+  
+}
+.shell_header h2{
+  display: inline-block;
+  margin-left: 400px;
+
+}
+.shell_main_top img{
+  display: inline-block;
+  vertical-align: top;
+  width: 360px;
+  height: 250px;
+  padding: 5px;
+  background-color: #A1A1A2;
+  margin: 10px;
+
+}
+.shell_main_top_about{
+  vertical-align: top;
+  display: inline-block;
+  background-color: #e9e1e9;
+  width: 555px;
+  margin: 10px;
+  padding-bottom: 10px;
+}
+.shell_main_top_about h1{
+  background-color: #918f9b;
+  padding: 10px;
+  vertical-align: top;
+}
+.shell_main_top_about p{
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ECE4EC;
+  display: block;
+
+}
+.shell_main_top_about a{
+  text-decoration-line: underline;
+  color: black;
+  margin: 10px;
+  
+}
+.the3cont{
+  width: 970px;
+}
+
+
+
+.the3cont div{
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 280px;
+  margin: 20px;
+  background-color: #E3D8E3;
+  padding-bottom: 20px;
+}
+.lamode h1{
+  background-image: radial-gradient(#a4a1a7,#c3c3c8,#a7a4a9);
+  color: whitesmoke;
+  padding: 5px;
+  font-size: 23px;
+  text-align: left;
+}
+.lamode .img1{
+  width: 269px;
+  height: 150px;
+}
+.lamode p{
+  padding: 15px;
+  font-size: 15px;
+  display: block;
+}
+.lamode h2{
+  font-size: 18px;
+  padding: 8px;
+  background-image: radial-gradient(#a4a1a7,#c3c3c8,#a7a4a9);
+  color:  white;
+
+}
+.lamode img{
+  width: 36px;
+  height: 35px;
+  padding: 5px;
+}
+.lamode button{
+  background-color: #407D61;
+  color:  #EEF5FA;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 12px 0px 0px 92px;
+  display: block;
+  border: 1px  solid black;
+
+}
+
+
+
+
+
+.familycontacts h1{
+  background-image: radial-gradient(#a4a1a7,#c3c3c8,#a7a4a9);
+  color: whitesmoke;
+  padding: 5px;
+  font-size: 23px;
+  text-align: left;
+}
+.familycontacts .img1{
+  width: 269px;
+  height: 150px;
+}
+.familycontacts p{
+  padding: 15px;
+  font-size: 15px;
+  display: block;
+}
+.familycontacts h2{
+  font-size: 18px;
+  padding: 8px;
+  background-image: radial-gradient(#a4a1a7,#c3c3c8,#a7a4a9);
+  color:  white;
+
+}
+.familycontacts img{
+  width: 36px;
+  height: 35px;
+  padding: 5px;
+}
+.familycontacts button{
+  background-color: #407D61;
+  color:  #EEF5FA;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 12px 0px 0px 92px;
+  display: block;
+  border: 1px  solid black;
+}
+
+
+
+
+
+.fiveEleven h1{
+  background-image: radial-gradient(#a4a1a7,#c3c3c8,#a7a4a9);
+  color: whitesmoke;
+  padding: 5px;
+  font-size: 23px;
+  text-align: left;
+}
+.fiveEleven .img1{
+  width: 269px;
+  height: 150px;
+}
+.fiveEleven p{
+  padding: 15px;
+  font-size: 15px;
+  display: block;
+}
+.fiveEleven h2{
+  font-size: 18px;
+  padding: 8px;
+  background-image: radial-gradient(#a4a1a7,#c3c3c8,#a7a4a9);
+  color:  white;
+
+}
+.fiveEleven img{
+  width: 36px;
+  height: 35px;
+  padding: 5px;
+}
+.fiveEleven button{
+  background-color: #407D61;
+  color:  #EEF5FA;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 12px 0px 0px 92px;
+  display: block;
+  border: 1px  solid black;
+}
+
+
+.contactINFO{
+  background-color: #F9F9F9;
+  min-height: 100px;
+  padding: 10px;
+
+}
+.contactINFO p{
+  text-align: center;
+  display: block;
+}
+.contactINFO img{
+  width: 19px;
+  min-height: 10px;
+  display: inline-block;
+}
+.contactINFO a{
+  text-align: center;
+  display: inline-block;
+  color: black;
+}
+.logo_links{
+  text-align: center;
+  margin: 7px;
+}

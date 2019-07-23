@@ -1,0 +1,107 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  /* outline: 1px dotted black; */
+}
+.shell{
+  margin: 0 auto;
+  /* background-color: purple; */
+  width: 970px;
+}
+.header{
+  width: 970px;
+  height: 77px;
+}
+.header img{
+  width: 93px;
+  height: 93px;
+  vertical-align: top;
+  display:inline-block;
+  position: absolute;
+}
+.header h1{
+  vertical-align: top;
+  display:inline-block;
+  margin-top: 35px;
+  margin-left: 90px;
+  font-size: 36px;
+  font-family: Arial;
+}
+.header h1 span{
+  color: #306EA2;
+}
+.header2{
+  background-color: #4179A8;
+}
+.header2 h3{
+  font-family: arial;
+  font-size: 27px;
+  color: white;
+  padding: 12px;
+}
+.main .watchvideo_buttons{
+  width: 200px;
+  display: block;
+  border-bottom: 1px rgba(0, 0, 0, 0.342) solid;
+  padding-bottom: 20px;
+}
+.watchvideo_buttons .theP{
+  font-size: 18px;
+  padding-top: 13px;
+}
+.watchvideo_buttons .span1{
+  color: red;
+}
+.watchvideo_buttons .span2{
+  color: blue;
+}
+.watchvideo_buttons p{
+  padding: 4px;
+  margin: 3px;
+  padding-bottom: 18px;
+}
+.watchvideo_buttons button{
+  padding: 5px;
+  width: 189px;
+  display: block;
+  margin: 2px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.watchvideo_buttons .blue{
+  background-color: #4179A8;
+  color: white;
+  padding: 10px;
+}
+.watchvideo_buttons .orange{
+  background-color: #F0972E;
+  height: 37px;
+  color: white;
+}
+.main .ninja{
+  background-image: url("ad_background.png");
+  width: 198px;
+  height: 260px;
+  display: block;
+  margin-top: 25px;
+  text-align: center;
+}
+.ninja p{
+  color: white;
+  font-size: 26px;
+  padding: 10px;
+}
+.ninja img{
+  width: 60px;
+  height: 90px;
+  margin-left: 70px;
+  display: block;
+  padding-bottom: 10px;
+}
+.ninja button{
+  padding: 6px;
+  width: 140px;
+  border-radius: 6px;
+  background-color: rgb(115, 207, 223);
+  color: white;
+}

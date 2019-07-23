@@ -1,0 +1,38 @@
+html{
+  background-color: rgb(7, 7, 165);
+}
+.header{
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+
+}
+.sidebar{
+  background-color: rgb(0, 255, 242);
+  display: inline-block;
+  border-radius: 10px;
+  width: 280px;
+  height: 270px;
+  margin-top: 10px;
+  vertical-align: top;
+}
+.thep{
+  margin-bottom: -20px;
+}
+.main{
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  width: 800px;
+  padding: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+.bottom{
+  color: white;
+  background-color: rgb(92, 96, 99);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}

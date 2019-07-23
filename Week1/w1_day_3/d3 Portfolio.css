@@ -1,0 +1,142 @@
+*{
+  outline: 1px red dotted;
+}
+.main{
+  background-color: rgb(151, 112, 138);
+  width: 1000px;
+  min-height: 1200px;
+}
+.top_part{
+  background: silver;
+  min-height: 100px;
+}
+.top_part .name1{
+  font-size: 20px;
+  display: inline-block;
+  width: 300px;
+}
+.top_part .name2{
+  display: inline-block;
+  width: 400px;
+  margin: 0px 0px 0px 260px;
+  text-align: right;
+}
+.mid .img123{
+  width: 400px;
+  height: 300;;
+}
+.mid .imgconteiner{
+
+  background-color: silver;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  margin: 10px 0px 0px 10px
+
+}
+.mid .about{
+  background-color: silver;
+  display: inline-block;
+  background-color: white;
+  width: 520px;
+  height: 266px;
+  margin: 10px;
+  vertical-align: top;
+  padding: 10px;
+}
+.mid .about h2{
+  color: white;
+  background-color: rgb(115, 116, 103);
+  padding: 15px;
+  margin-top: -4px;
+}
+
+.block1 .woman .lamodeimage{
+  width:300px;
+  height: 205px;
+}
+.block1{
+  width: 300px;
+  height: 250px;
+  display: inline-block;
+  vertical-align: top;
+}
+.block1 .woman{
+  background-color: white;  
+}
+.block1 h2{
+  
+  padding: 10px;
+  background-color: silver;
+}
+.woman p{
+  padding: 30px;
+}
+.technologies{
+  background-color: white;
+  margin: -40px 0px 0px 0px;
+  padding: 0px 0px 40px 0px
+}
+.technologies h3{
+  background-color: silver;
+  padding: 10px;
+}
+.technologies img{
+  width: 35px;
+}
+.technologies h4{
+    width: 70px;
+    margin: 20px 0px 0px 100px;
+    border: solid black;
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+
+
+}
+
+
+.block2 .familyContacts .familypic{
+  width:300px;
+  height: 206px;
+}
+.block2{
+  width: 300px;
+  height: 250px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 40px;
+}
+.block2 .familyContacts{
+  background-color: white;
+  padding: 0px 0px 0px 0px  
+}
+.block2 h2{
+  
+  padding: 10px;
+  background-color: silver;
+  padding: 0px 0px 0px -10px
+}
+.familyContacts p{
+  padding: 20px;
+}
+.technologies2{
+  background-color: white;
+  margin: -20px 0px 0px 0px;
+  padding: 0px 0px 20px 0px;
+}
+.technologies2 h3{
+  background-color: silver;
+  padding: 10px;
+}
+.technologies2 img{
+  width: 35px;
+}
+.technologies2 h4{
+    width: 140px;
+    margin: 20px 0px 0px 70px;
+    border: solid black;
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+}
