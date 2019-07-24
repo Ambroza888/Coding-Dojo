@@ -1,0 +1,112 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  /* outline: 2px dotted black; */
+}
+.shell{
+  margin: 0 auto;
+  width: 970px;
+}
+.addclass {
+
+  width: 970px;
+  border-bottom: 3px solid black;
+
+}
+.addclass button{
+  display: inline-block;
+  width: 200px;
+  padding: 5px;
+  vertical-align: top;
+  margin-top: 50px;
+  margin-left: 10px;
+  border: 1px solid black;
+
+}
+.addclass .discription{
+  display: inline-block;
+  width: 600px;
+  text-align: center;
+  vertical-align: top;
+  margin-left: 90px;
+}
+.addclass h1{
+  font-size: 50px;
+  margin-top: 30px;
+  
+}
+.addclass p{
+  font-size: 25px;
+  margin: 7px;
+}
+
+
+
+.slidetoggle {
+
+  width: 970px;
+  border-bottom: 3px solid black;
+
+}
+.slidetoggle .button_holders{
+  display: inline-block;
+  vertical-align: top;
+}
+.slidetoggle button{
+  display: block;
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+  margin-left: 10px;
+  border: 2px solid black;
+
+}
+.slidetoggle .discription{
+  display: inline-block;
+  width: 500px;
+  text-align: center;
+  vertical-align: top;
+  margin-left: 90px;
+}
+.slidetoggle h1{
+  font-size: 50px;
+  margin-top: 30px;
+  
+}
+.slidetoggle p{
+  font-size: 25px;
+  margin: 7px;
+}
+
+.append {
+
+  width: 970px;
+  border-bottom: 3px solid black;
+
+}
+.append button{
+  display: inline-block;
+  width: 200px;
+  padding: 5px;
+  vertical-align: top;
+  margin-top: 50px;
+  margin-left: 10px;
+  border: 1px solid black;
+
+}
+.append .discription{
+  display: inline-block;
+  width: 600px;
+  text-align: center;
+  vertical-align: top;
+  margin-left: 90px;
+}
+.append h1{
+  font-size: 50px;
+  margin-top: 30px;
+  
+}
+.append p{
+  font-size: 25px;
+  margin: 7px;
+}
