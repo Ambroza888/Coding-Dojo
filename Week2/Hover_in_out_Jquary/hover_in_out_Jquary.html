@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HoverInOut</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <img src="daftpunk.gif" alt="cooler.png" width="200px" height="200px">
+  <img src="daftpunk.gif" alt="cooler.png" width="200px" height="200px">
+  <img src="daftpunk.gif" alt="cooler.png" width="200px" height="200px">
+  <img src="daftpunk.gif" alt="cooler.png" width="200px" height="200px">
+  <img src="daftpunk.gif" alt="cooler.png" width="200px" height="200px">
+
+
+  <script>
+
+    var temp = "";
+
+    $("img").hover(// (function , function)
+    function(){
+      temp = $(this).attr('src'); // ----- > saving the first_image
+
+      $(this).attr("src" , $(this).attr('alt')); // ----- > first_image --> alt_image
+      },
+
+      function(){
+      $(this).attr("src" , temp); // --->alt_image --- > saved first_image
+    });
+  </script>
+</body>
+</html>
