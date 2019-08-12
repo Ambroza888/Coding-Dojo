@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+  <form action="/result", method="POST">
+
+    <div style="display: inline-block; margin-left: 700px;margin-top: 300px;">
+      Your Name: <input type="text" name="name">
+      <br>
+      Dojo Location :
+      <select name="location">
+        <option value="San Jose">San Jose</option>
+        <option value="Seattle">Seattle</option>
+      </select>
+      <br>
+      Favorite Language:
+      <select name="language">
+          <option value="Pyt">Python</option>
+          <option value="Java">JavaScript</option>
+          <option value="HTML">HTML</option>
+        </select>
+        <br>
+        Commend(Optional):
+        <br>
+        <textarea name="freetextAREA" id="" cols="30" rows="10"></textarea>
+        <br>
+        <input type="submit" value="Button">
+      </div>
+  
+  </form>
+
+
+</body>
+</html>
