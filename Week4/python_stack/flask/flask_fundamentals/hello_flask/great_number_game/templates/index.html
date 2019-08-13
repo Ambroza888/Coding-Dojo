@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>{{session["guess"]}}</h1>
+
+
+  <form action="/thenumber" method="POST">
+    <div>
+      <h1>Welcome to the great number game</h1>
+      <p>I am thinking of a number between 1 and 100</p>
+      <p>Take a Guess</p>
+      <input type="text" name="theNUM">
+      <input type="submit" name="">
+    </div>
+  </form>
+  <div>
+  {%if session['yourNUM'] == "Too Low"%}
+  <p>Too Low</p>
+  {%endif%}
+  {%if session['yourNUM'] == "Too High"%}
+  <p>Too High</p>
+  {%endif%}
+  {%if session['yourNUM'] == "You Guess Right !!!"%}
+  <p>Your guess is right !!!</p>
+  {{session.clear()}}
+  {%endif%}
+    </div>
+</body>
+</html>
