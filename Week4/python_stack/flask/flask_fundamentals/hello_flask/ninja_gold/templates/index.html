@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+  div {
+    display:inline-block; width: 250px; height: 250px;
+    margin: 30px;
+    border: black 2px solid;
+    text-align: center;
+    vertical-align: top;
+  }
+  /* .activities{
+    width: 1200px;
+    height: 100px;
+    border: black 2px solid;
+    text-align: left;
+  } */
+  textarea {
+    width: 1200px;
+    margin-left: 20px;
+  }
+  form {
+    margin-top: 120px;
+  }
+  </style>
+</head>
+<body>
+  <p>Your Gold: {{session["total"]}}</p>
+  <div>
+    <h6>Farm</h6>
+    <p>(earns 10-20gold)</p>
+    <form action="/process_money" method="post">
+      <input type="hidden" name="building" value="farm" />
+      <input type="submit" value="Find Gold!"/>
+    </form>
+  </div>
+  <div>
+    <h6>Cave</h6>
+    <p>(earns 5-10gold)</p>
+    <form action="/process_money" method="POST">
+      <input type="hidden" name="building" value="cave">
+      <input type="submit" value="Find Gold!">
+    </form>
+  </div>
+  <div>
+    <h6>House</h6>
+    <p>(earns 2-5gold)</p>
+    <form action="/process_money" method="POST">
+      <input type="hidden" name="building" value="house">
+      <input type="submit" value="Find Gold!">
+    </form>
+  </div>
+  <div>
+    <h6>Casino</h6>
+    <p>(earns/takes 0-50gold)</p>
+    <form action="/process_money" method="POST">
+      <input type="hidden" name="building" value="casino">
+      <input type="submit" value="Find Gold!">
+    </form>
+  </div>
+  <p>Activities:</p>
+    <textarea cols="20" rows="10">
+      {{session["activity"]|safe}}
+      {%for s in session["activity"]%}
+        {{s|safe}}
+      {%endfor%}
+    </textarea>
+    <form action="/clear" method="POST" class="reset">
+      <input type="submit" name="submit" value="Reset gold">
+    </form>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
