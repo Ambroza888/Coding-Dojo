@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      margin-left: 450px;
+      border: 2px solid black;
+      display: inline-block;
+      padding: 20px;
+    }
+    p {
+      margin-left: 550px;
+      margin-top: 150px;
+    }
+    h1 {
+      font-size: 50px;
+    }
+    .thebut {
+      margin-left: 630px;
+      margin-top: 15px;
+      padding: 5px;
+    }
+    
+  </style>
+
+</head>
+<body>
+    <p>Random Word (attempt #{{request.session.counter}})</p>
+  <div>
+    <h1>{{request.session.theword}}</h1>
+  </div>
+  <form action="/generate", method="POST">
+    {% csrf_token %}
+    <input class="thebut" type="submit" value="Generate">
+  </form>
+
+    <form action="/reset", method="POST">
+      {% csrf_token %}
+      <input type="submit" value="Reset">
+    </form>
+</body>
+</html>
