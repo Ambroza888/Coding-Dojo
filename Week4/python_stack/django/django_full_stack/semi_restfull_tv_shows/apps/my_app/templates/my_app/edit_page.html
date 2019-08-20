@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+      .network_release_date {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .main {
+        margin-left: 300px;
+        width: 390px;
+      }
+      .go_back {
+        margin-left: 700px;
+      }
+    
+    </style>
+</head>
+<body>
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+  <a class="go_back" href="/shows">Go Back</a>
+  <div class="main">
+    <form action="/shows/{{chosen_show.id}}/update" method="POST">
+      {%csrf_token%}
+      <div>
+        <h1>Edit Show {{chosen_show.id}}</h1>
+        <p>Title</p>
+        <input type="text" name="title" size="49" value="{{chosen_show.title}}">
+      </div>  
+      <div class="network_release_date">
+        <p>Network</p>
+        <input type="text" name="network" value="{{chosen_show.network}}">
+      </div>
+      <div class="network_release_date">
+        <p>Release Date</p>
+        <input type="text" name="release_date" value="{{chosen_show.release_date | date:'Y-m-d'}}">
+      </div>
+      <p>Description</p>
+      <textarea  class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc">
+        {{chosen_show.desc}}
+      </textarea>
+      <input type="submit" value="Update">
+
+
+    </form>
+  </div>
+</body>
+</html>
