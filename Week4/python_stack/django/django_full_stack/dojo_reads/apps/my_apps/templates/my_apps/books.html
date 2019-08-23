@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Books</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+          <h3>Welcome {{user.name}}</h3>
+          <br><br>
+          <h5>Recent Book Reviews:</h5>
+          <br>
+
+
+
+          {%for i in review%}
+          <a href="PLACEHOLDER">{{i.book.title}}</a>
+          <p>Rating: {{i.rating}}</p>
+          <p><a href="PLACEHOLDER">{{i.user.name}}</a> says: {{i.text}}</p>
+          <p>Posted on {{i.created_at | date:"M Y, d"}}</p>
+          <br>
+          {%endfor%}
+
+
+
+
+          
+
+      </div>
+      <div class="col">
+        <a href="/add">Add Book and Reviews</a>
+        <a style="margin-left: 50px;" href="PLACEHOLDER">Log Out</a>
+        <br><br>
+        <h5>Other Books with Reviews:</h5>
+        <br>
+
+        <ul style="border: 2px black solid;"class="list-unstyled">
+            {%for i in all_books%}
+          <li>
+            <a href="PLACEHOLDER">{{i.title}}</a>
+          </li>
+          {%endfor%}
+        </ul>
+        </select>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add Book</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <a style="margin-left: 340px" href="PLACEHOLDER">Home</a>
+        <a style="margin-left: 10px" href="PLACEHOLDER">Logout</a>
+        <br><br>
+        <h3>Add a New Book Title and a Review:</h3>
+
+
+        <form action="/add_book_process" method="POST">
+          {% csrf_token %}
+          <p>Book Title <input type="text" name="title"></p>
+          <p>Author:</p>
+          <ul class="list-unstyled">
+            <li>
+              <p>Choose from the list:
+                <select name="chosen_old_author">
+                  <option value="0">Select an Author</option>
+                    {%for i in all_authors%}
+                    <option value="{{i.id}}">{{i.first_name}} {{i.last_name}}</option>
+                    {%endfor%}
+                </select>
+              </p>
+            </li>
+            <li>
+              <p>Or add a new author: <input type="text" name="chosen_new_author"> </p>
+            </li>
+          </ul>
+          <p>Review : 
+            <textarea name="review_text"cols="37" rows="2"></textarea>
+          </p>
+          <p>Rating: 
+            <select name="chosen_rating">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+          </select>  stars. 
+        </p>
+        <input type="submit" formmethod = "POST" value="Add Book and Review">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
