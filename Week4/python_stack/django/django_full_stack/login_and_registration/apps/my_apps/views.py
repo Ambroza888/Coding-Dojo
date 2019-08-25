@@ -7,7 +7,6 @@ from django.contrib import messages
 
 
 def index(request):
-  # print(request.session['userid'])
   return render(request, "my_apps/index.html")
 
 
@@ -61,7 +60,10 @@ def go_back(request):
 
 
 def dojo_wall(request):
-  context = {
+  if not "userid" in request.session:
+    return redirect('/')
+  else:
+    context = {
     "the_user":User.objects.get(id = request.session['userid']),
     "all_mess":Message.objects.all(),
     "all_comments": Comment.objects.all()

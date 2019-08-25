@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Review Book</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col">
+          <h2>{{book.title}}</h2>
+          <p>Author: {{book.author.first_name}}</p>
+      </div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col">
+          <p>Reviews:</p>
+          <ul class="list-unstyled">
+            {%for i in review_this_book%}
+            <li>{{i.rating}}</li>
+            <li>{{i.user}}</li>
+            <li></li>
+            {%endfor%}
+          </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

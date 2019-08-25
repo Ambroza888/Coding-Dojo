@@ -17,9 +17,8 @@
           <br>
 
 
-
           {%for i in review%}
-          <a href="PLACEHOLDER">{{i.book.title}}</a>
+          <a href="/check_book/{{i.book.id}}">{{i.book.title}}</a>
           <p>Rating: {{i.rating}}</p>
           <p><a href="PLACEHOLDER">{{i.user.name}}</a> says: {{i.text}}</p>
           <p>Posted on {{i.created_at | date:"M Y, d"}}</p>
@@ -34,7 +33,7 @@
       </div>
       <div class="col">
         <a href="/add">Add Book and Reviews</a>
-        <a style="margin-left: 50px;" href="PLACEHOLDER">Log Out</a>
+        <a style="margin-left: 50px;" href="/reset_session">Log Out</a>
         <br><br>
         <h5>Other Books with Reviews:</h5>
         <br>

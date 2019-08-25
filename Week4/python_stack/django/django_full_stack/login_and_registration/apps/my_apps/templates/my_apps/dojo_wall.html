@@ -11,7 +11,7 @@
     <nav class="navbar navbar-dark bg-primary">
         <h2>CodingDojo Wall</h2>
         <h3>Wellcome {{the_user.first_name}}</h3>
-        <a style="color: black; font-size: 20px;" href="/">log off</a>
+        <a style="color: black; font-size: 20px;" href="/go_back">log off</a>
       </nav>
       <br><br>
 
@@ -36,11 +36,11 @@
       {%for i in all_mess%}
       <div class="row">
         <div class="col">
-          <h5>{{i.user.first_name}} {{i.user.last_name}} - {{i.created_at}}</h5>
+          <h5>{{i.user.first_name}} {{i.user.last_name}} - {{i.created_at}} ((((((({{i.id}})))))</h5>
             <h5> Message: {{i.messege}}</h5>
             {% for c in all_comments %}
               {% if c.message.id == i.id %}
-              <p>{{c.user.first_name}}: {{c.comment}}</p>
+              <p>((({{c.message.id}}){{c.user.first_name}}: {{c.comment}}</p>
               {%endif%}
             {% endfor %}
             <form action="/add_comment" method="POST">

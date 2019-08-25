@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^log_in_data$', views.log_in_data),
     url(r'^add$', views.add_book),
     url(r'^add_book_process$', views.add_book_process),
-    url(r'^books_placeholder$', views.books_placeholder)
+    url(r'^books_placeholder$', views.books_placeholder),
+    url(r'^reset_session$', views.reset_session),
+    url(r'^check_book/(?P<my_val>\d+)$', views.check_book)
 ]

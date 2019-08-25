@@ -34,8 +34,9 @@ def log_in_data(request):
   if user:
     logged_user = user[0]
     if bcrypt.checkpw(request.POST['password'].encode(), logged_user.password.encode()):
-      request.session['user_id'] = id
+      request.session['user_id'] = logged_user
       return redirect("/books")
+
     else:
       messages.add_message(request, messages.ERROR, "Invalid information", extra_tags='login')
   return redirect('/')
@@ -48,7 +49,7 @@ def books(request):
     context= {
     "user": User.objects.get(id=request.session['user_id']),
     "all_books": Book.objects.all(),
-    "review": Review.objects.all().order_by("-created_at")
+    "review": Review.objects.all().order_by("-created_at")[:3]
     }
 
 
@@ -85,3 +86,17 @@ def add_book_process(request):
 def books_placeholder(request):
 
   return render(request, "my_apps/books_placeholder.html")
+
+
+def reset_session(request):
+  request.session.clear()
+  return redirect('/')
+
+
+def check_book(request, my_val):
+  book = Book.objects.get(id=int(my_val))
+  context = {
+    "book": book,
+    "review_this_book":Review.objects.filter(book=book)
+  }
+  return render(request, "my_apps/check_book.html", context)
