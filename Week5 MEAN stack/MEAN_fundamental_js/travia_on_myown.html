@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+</head>
+<body>
+
+  <h1 id="catergory"></h1>
+  <h3 id="title"></h3>
+
+  
+  <button id="0" class="yo"></button>
+  <button id="1" class="yo"></button>
+  <button id="2" class="yo"></button>
+  <button id="3" class="yo"></button>
+
+
+
+
+
+
+
+
+  <script>
+  
+  $.get("https://opentdb.com/api.php?amount=10&type=multiple",function(data){
+    // console.log(data.results)
+    main(data)
+  });
+
+
+  function main(data){
+    var num_category = Math.floor(Math.random()*10);
+    $('#catergory').html(data.results[num_category].category);
+    // console.log(data.results[num_category].category);
+    $('#title').html(data.results[num_category].question)
+    
+    var num = Math.floor(Math.random()*4)
+    var answer = $('#' + num).html(data.results[num_category].correct_answer)
+    // console.log(data.results[num_category].correct_answer)
+
+    var j = 0
+    for (var i = 0;i < 4;i++){
+      if (num !== i){
+        $('#'+ i).html(data.results[num_category].incorrect_answers[j])
+      // console.log(data.results[num_category].incorrect_answers[j])
+      j++;
+      }
+    }
+
+    $('#'+num).click(function(){
+    console.log($('#'+num));
+    console.log($('#'+num).text()   );
+      if ($('#'+num).text() === data.results[num_category].correct_answer){
+        alert("Right answer !!!")
+      }
+      else{
+        alert("try Again")
+      }
+    });
+
+  }
+
+  
+  </script>
+</body>
+</html>
