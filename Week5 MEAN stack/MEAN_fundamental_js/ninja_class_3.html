@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script>
+
+
+
+class Ninja{
+  constructor(name,health = 100,speed=3,strength=3){
+    this.name = name;
+    this.health = health;
+    this.speed = speed;
+    this.strength = strength;
+  }
+  sayName(){
+    console.log(`Name:${this.name}`)
+  }
+  showStats(){
+    console.log(`Name:${this.name}, Strength:${this.strength}, Speed:${this.speed} and Health:${this.health}`)
+  }
+  drinkShake(){
+    this.health += 5
+  }
+}
+var Gosho = new Ninja("Gosho_ninjata")
+// ninja1.drinkShake()
+// ninja1.showStats()
+
+class Sensei extends Ninja{
+  constructor(name,health = 200,speed=10,strength=10,wisdom=10){
+    super(name,health,speed,strength);
+    this.wisdom = wisdom
+  }
+  speakWisdom(){
+    super.drinkShake();
+    console.log("What one programmer can do in one month, two pogrammers can do in two months")
+  }
+}
+var papi = new Sensei("Master Splinter")
+
+papi.speakWisdom()
+papi.showStats()
+
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+
+
+</body>
+</html>

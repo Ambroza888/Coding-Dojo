@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+  
+    class Card{
+      constructor(suit,str_value,value_num){
+        this.suit = suit;
+        this.str_value=str_value;
+        this.value_num=value_num;
+      }
+      showMethod(){
+        console.log(`${this.str_value} of ${this.suit} with value:${this.value_num}`)
+      }
+    }
+    // damapika.showMethod()
+
+    class Deck{
+      constructor(arr){
+        this.arr = arr
+      }
+      shuffle(){
+        var copy = [], n = this.arr.length, i;
+        while (n){
+          i = Math.floor(Math.random() * n--);
+          copy.push(this.arr.splice(i, 1)[0]);
+        }
+        this.arr = copy; return this;
+      }
+      reset(){
+        shuffle();
+      }
+      deal(){
+
+      var i = Math.floor(Math.random() * this.arr.length);
+      return this.arr.splice(i, 1);
+      }
+
+    }
+  
+
+
+
+    class Player{
+      constructor(name){
+        this.name = name;
+        this.hand = [];
+      }
+      take_a_card(deck){
+        this.hand.push(deck.deal())
+      }
+      discard_card(){
+       var y =  this.hand.splice(0,1);
+        return y;
+      }
+    }
+  
+    var damaPika = new Card("Spades","Queen",10);
+    var jackPika = new Card("Spades","Jack",10);
+    var kingPika = new Card("Spades","King",10);
+    var deck = new Deck([damaPika,jackPika,kingPika])
+
+    var veso = new Player("Veso");
+    veso.take_a_card(deck.shuffle());
+    // veso.discard_card()
+    console.log(veso)
+
+    
+
+
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

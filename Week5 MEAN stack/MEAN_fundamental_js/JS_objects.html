@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+  <script>
+  
+//   let students = [
+//     {name: 'Remy', cohort: 'Jan'},
+//     {name: 'Genevieve', cohort: 'March'},
+//     {name: 'Chuck', cohort: 'Jan'},
+//     {name: 'Osmund', cohort: 'June'},
+//     {name: 'Nikki', cohort: 'June'},
+//     {name: 'Boris', cohort: 'June'}
+// ];
+//     function print_students(str){
+//     for (var i in str){
+//       console.log("Name: " + str[i].name + ", cohort: " + str[i].cohort)
+//     }
+//   }
+//   print_students(students);
+
+
+
+
+
+let users = {
+    employees: [
+        {'first_name':  'Miguel', 'last_name' : 'Jones'},
+        {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+        {'first_name' : 'Nora', 'last_name' : 'Lu'},
+        {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+    ],  
+    vessilinass: [
+        {'first_name':  'Vassil', 'last_name' : 'Jones'},
+        {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+        {'first_name' : 'Nora', 'last_name' : 'Lu'},
+        {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+    ],
+    managers: [
+        {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+        {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+    ]
+};
+
+function print_user_manager(user){
+  // var count = 1
+  // for (var u in user){
+  //   count = 1
+  //     console.log(u);
+  //     for (var i in user[u]){
+  //     var emp = user[u][i];
+  //     console.log(count + " - " +  emp.first_name + ", "+ emp.last_name + " - " + (emp.first_name.length + emp.last_name.length));
+  //     count++
+  //   }
+  // }
+    var count = 1
+    for (var i in user){
+      console.log(i.toUpperCase())
+      count = 1
+      for (var j in user[i]){
+        console.log(count + " - " + user[i][j].first_name.toUpperCase(), user[i][j].last_name.toUpperCase() + " - " + (user[i][j].first_name.length + user[i][j].last_name.length));
+        count++;
+      }
+    }
+
+
+}
+print_user_manager(users)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+  <h1>Functions</h1>
+</body>
+</html>

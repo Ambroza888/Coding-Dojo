@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <script>
+
+
+    
+
+ // assuming you have jQuery
+$(document).ready(function(){
+
+
+
+
+
+
+    $('.yo').click(function(){
+    $.get("https://api.github.com/users/Ambroza888",displayName)
+    function displayName(data){
+    $("h1").html(data.name)
+  }
+  })
+
+
+
+
+
+});       
+
+  
+  
+  </script>
+</head>
+<body>
+    <button class="yo">Click me</button>
+  <h1>functions</h1>
+</body>
+</html>
