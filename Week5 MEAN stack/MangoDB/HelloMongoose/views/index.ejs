@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/users" method="POST">
+    <p>Name: <input type="text" name="name"></p>
+    <p>Age: <input type="number" name="age"></p>
+    <button>Submit</button>
+  </form>
+  <%for (var i in users){%>
+  <p>NAME: <%=users[i].name%> - AGE: <%=users[i].age%></p>
+  <%}%>
+
+  <!-- tip to easily see objects printed in full instead of [object Object] -->
+<%JSON.stringify(messages) %> 
+<!-- based on the structure of your messages, determine how to display them -->
+<% if(messages.registration) { %>
+     <% for (var x of messages.registration) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+</body>
+</html>
