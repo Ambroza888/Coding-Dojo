@@ -1,0 +1,38 @@
+class Bike {
+  price: number;
+  max_speed: number;
+  miles: number;
+  constructor(price: number, max_speed: number, miles: number = 0) {
+    this.price = price;
+    this.max_speed = max_speed;
+    this.miles = miles;
+  }
+  printInfo(): void {
+    console.log(
+      `The price of the bike is ${this.price} and maximum speed is ${
+        this.max_speed
+      }. and the miles are ${this.miles}`
+    );
+  }
+  ride() {
+    console.log(`Congrats you just ride 10 miles and added to your bike life`);
+    this.miles = this.miles + 10;
+    return this;
+  }
+  reverse() {
+    if (this.miles >= 5){
+    this.miles = this.miles - 5;
+    console.log(`You just have reverse your milige on your bike with 5miles`);
+    }
+    else{
+    console.log("sorry you cannot reverse your miles because you have less than 5miles")
+    }
+    return this;
+  }
+}
+var bike1 = new Bike(100, 25);
+var bike2 = new Bike(200, 10);
+var bike3 = new Bike(100, 50);
+bike1.ride().ride().ride().reverse().printInfo();
+bike2.ride().ride().reverse().reverse().printInfo();
+bike3.reverse().reverse().reverse().printInfo();
