@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+
+</style>
+<body>
+  <div class="container">
+
+    <h1>Ninja Gold!</h1>
+    <h6>Your Gold: {{gold}}</h6>
+    <div class="row">
+      <div class="col">
+        <button class="text-center" (click)="Job()">Job<br>(5-7) gold</button>
+      </div>
+      <div class="col">
+          <button class="text-center" (click)="DragonT()">Dragon Training<br>(5-10) gold</button>
+        </div>
+        <div class="col">
+            <button class="text-center" (click)="PetTerapest()">Pet Terapest<br>(10-20) gold</button>
+          </div>
+          <div class="col">
+              <button class="text-center" (click)="Casino()">Casino<br>(-50:50) gold</button>
+            </div>
+    </div>
+    <div class="row mt-5">
+      <h2>Activity Log</h2>
+      <div> 
+          <ul *ngFor='let i of mess'>
+            <li *ngIf='i[1] == 0' style="color: green">{{i[0]}}</li>
+            <li *ngIf='i[1] == 1' style="color: red">{{i[0]}}</li>
+          </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
