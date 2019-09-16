@@ -1,0 +1,14 @@
+<p *ngFor="let task of tasks">Title: {{task.title}} --- Description{{task.description}}, Created on  {{task.createdAt}} </p>
+<p>{{tasks[0].title}}</p>
+
+<button (click)="onClickTasks()" >Show Tasks!</button>
+
+<ul *ngFor='let task of yo'>
+  <li>The Title :{{task.title}} <button (click)='idtaker(task._id)'>Show</button></li>
+  <li>{{task._id | json}}</li>
+</ul>
+
+<ul>
+  <li>Tittle : {{the_id.title}}</li>
+  <li>Description: {{the_id.description}}</li>
+</ul>
