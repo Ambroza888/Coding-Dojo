@@ -8,8 +8,8 @@ module.exports = {
   },
   create: function(req,res){
     Task.create(req.body)
-    .then(data => res.redirect('/task'))
-    .catch(err => res.json(err));
+    .then(data => res.json(data))
+    .catch(err => res.json(err))
   },
   findById: function(req,res){
     Task.findOne({_id:req.params.id})
@@ -18,12 +18,12 @@ module.exports = {
   },
   update: function(req,res){
     Task.findOneAndUpdate({_id:req.params.id},req.body)
-    .then(data => res.redirect('/task'))
+    .then(data => res.json(data))
     .catch(err => res.json(err))
   },
   delete: function(req,res){
     Task.findByIdAndRemove({_id:req.params.id})
-    .then(data => res.redirect('/task'))
+    .then(data => res.json(data))
     .catch(err => res.json(err))
   }
 }

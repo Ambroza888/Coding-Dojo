@@ -1,14 +1,18 @@
-<p *ngFor="let task of tasks">Title: {{task.title}} --- Description{{task.description}}, Created on  {{task.createdAt}} </p>
-<p>{{tasks[0].title}}</p>
-
-<button (click)="onClickTasks()" >Show Tasks!</button>
-
-<ul *ngFor='let task of yo'>
-  <li>The Title :{{task.title}} <button (click)='idtaker(task._id)'>Show</button></li>
-  <li>{{task._id | json}}</li>
+<ul *ngFor='let task of tasks'>
+  <li>Title: {{task.title}} |  Description: {{task.description}}</li>
 </ul>
 
-<ul>
-  <li>Tittle : {{the_id.title}}</li>
-  <li>Description: {{the_id.description}}</li>
+<button (click)='ShowOnclick()'>Show tasks</button>
+
+<ul *ngFor='let b of showTasks'>
+  <li>{{b.title}} |||| {{b.description}}<button (click)='id_taker(b._id)' >Show!</button></li>
 </ul>
+<p>{{the_id_title}} {{the_id_description}}</p>
+<h1>The Post Form starts here ! :)</h1>
+<h2>New Task</h2>
+<form (submit)='create()'>
+  <input type="text" name="newTask.title" [(ngModel)]='newTask.title'>
+  <input type="text" name="newTask.description" [(ngModel)]='newTask.description'>
+  <input type="submit" value="Submit New Task !!!">
+</form>
+

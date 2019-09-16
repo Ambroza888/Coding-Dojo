@@ -10,12 +10,16 @@ import {HttpService} from './http.service'
 
 export class AppComponent implements OnInit{
   constructor(private _httpService: HttpService){}
-  title = 'public'
+
   tasks:any;
-  yo:any;
-  the_id:any;
+  showTasks:any;
+  the_id_title:any;
+  the_id_description:any;
+  newTask:any;
+
   ngOnInit(){
     this.getTasksFromService();
+    this.newTask = {title:'',description:''}
   }
 
 
@@ -24,20 +28,27 @@ export class AppComponent implements OnInit{
     obs.subscribe(data => {
       console.log("got Our data!",data)
       this.tasks = data;
-    });
-  }
-  onClickTasks(){
-    let obs = this._httpService.getTasks()
-    obs.subscribe(data => {
-      this.yo = data;
-    });
-  }
-  idtaker(id:number){
-    let obs = this._httpService.getById(id)
-    obs.subscribe(data =>{
-      this.the_id = data;
-      console.log(data)
     })
-    
+  }
+  ShowOnclick(){
+    let obs = this._httpService.getTasks()
+    obs.subscribe(data =>{
+      console.log(data)
+      this.showTasks = data;
+    })
+  }
+  id_taker(id_num:number){
+    let obs = this._httpService.getById(id_num)
+    obs.subscribe(data =>{
+      console.log(data)
+      this.the_id_title = data['title']
+      this.the_id_description = data['description']
+    })
+  }
+  create(){
+    let obs = this._httpService.createTask(this.newTask)
+    obs.subscribe(data =>{
+      this.newTask = {title:"",description:""}
+    })
   }
 }
