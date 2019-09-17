@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+  *{
+    margin:0;
+    padding: 0;
+  }
+
+</style>
+<body>
+  
+
+
+  <div class="container">
+    <h1>Rate My Cakes</h1>
+    <div class="row mb-5">
+      <div class="col-4 border border-dark">
+          <h3 class="h3">Submit a cake to be rated</h3>
+          <form class="col">
+              <h5>Baker Name:</h5>
+              <input type="text" name='newUrl.bakerName' [(ngModel)]='newUrl.bakerName'>
+              <h5>Image Url:</h5>
+              <input type="text" name="newUrl.url" [(ngModel)]='newUrl.url'><br>
+              <input type="Submit" value="SUBMIT" (click)='takingUrl()'>
+          </form>
+      </div>
+      <div class="col-8 overflow-auto" style="height: 300px;">
+        <div class="row" *ngFor='let cake of allCakes'>
+          <div class="col-5 mb-3">
+            <img src="{{cake.url}}" alt="broke" width="220px" height="250px" (click)='showTheCake(cake._id)'>
+          </div>
+          <div class="col-5">
+              <form class="col">
+                  <select class="p-1 mb-1" name="rating" [(ngModel)]='review.rating'>
+                    <option value="1">1 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                  </select>
+                  <textarea name="comment" cols="30" rows="4" [(ngModel)]='review.comment'></textarea>
+                  <input class="p-1" type="submit" value="Rate!" (click)='sendingRate(cake._id)'>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+    <div *ngIf='the_cake' class="container">
+      <h2>Baked by {{the_cake.bakerName}}</h2>
+      <div class="row">
+        <div class="col">
+          <img src="{{the_cake.url}}" alt="broke" width="300px">
+        </div>
+        <div class="col">
+          <h5>Average rating:</h5>
+          <div *ngFor='let review of the_cake.reviews'>
+            <p>{{review.comment}}</p>
+            <p *ngIf='review.rating == 5'>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p *ngIf='review.rating == 4'>&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+            <p *ngIf='review.rating == 3'>&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+            <p *ngIf='review.rating == 2'>&#9733;&#9733;&#9734;&#9734;&#9734;</p>
+            <p *ngIf='review.rating == 1'>&#9733;&#9734;&#9734;&#9734;&#9734;</p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+<router-outlet></router-outlet>
