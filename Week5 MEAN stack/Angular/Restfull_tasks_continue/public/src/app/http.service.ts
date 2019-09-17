@@ -13,10 +13,14 @@ export class HttpService {
   getById(id){
     return this._http.get(`/task/${id}`)
   }
-  // addNewTask(newTask){
-  //   return this._http.post('/task/create',newTask)
-  // }
   createTask(task){
     return this._http.post('task/create',task)
+  }
+  edTask(task){
+    console.log(task._id, task)
+    return this._http.put(`/task/${task._id}`,task)
+  }
+  deleteTask(id_num){
+    return this._http.delete(`/task/${id_num}`)
   }
 }

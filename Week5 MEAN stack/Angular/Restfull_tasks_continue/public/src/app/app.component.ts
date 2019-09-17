@@ -16,6 +16,8 @@ export class AppComponent implements OnInit{
   the_id_title:any;
   the_id_description:any;
   newTask:any;
+  selectedTask:any;
+  taskToUpdate:any;
 
   ngOnInit(){
     this.getTasksFromService();
@@ -37,18 +39,39 @@ export class AppComponent implements OnInit{
       this.showTasks = data;
     })
   }
-  id_taker(id_num:number){
+  taskToShow(id_num:number){
     let obs = this._httpService.getById(id_num)
     obs.subscribe(data =>{
-      console.log(data)
-      this.the_id_title = data['title']
-      this.the_id_description = data['description']
+      this.selectedTask = data
     })
   }
   create(){
     let obs = this._httpService.createTask(this.newTask)
     obs.subscribe(data =>{
       this.newTask = {title:"",description:""}
+      this.getTasksFromService()
+    })
+  }
+  ShowToEditTask(id_num:number){
+    let obs = this._httpService.getById(id_num)
+    obs.subscribe(data =>{
+      // console.log(data)
+      this.taskToUpdate = data;
+    })
+  }
+  editTask(){
+    let obs = this._httpService.edTask(this.taskToUpdate)
+    obs.subscribe(data =>{
+      // console.log(data)
+      // this.taskToUpdate = data;
+      this.getTasksFromService()
+    })
+    // let task = {_id:this.taskToUpdate._id,title:this.taskToUpdate.title,description:this.taskToUpdate.description}
+  }
+  deleteTask(id_num){
+    let obs = this._httpService.deleteTask(id_num)
+    obs.subscribe(data =>{
+      this.getTasksFromService()
     })
   }
 }

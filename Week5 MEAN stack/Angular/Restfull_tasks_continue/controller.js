@@ -17,6 +17,7 @@ module.exports = {
     .catch(err => res.json(err))
   },
   update: function(req,res){
+    console.log(req.body)
     Task.findOneAndUpdate({_id:req.params.id},req.body)
     .then(data => res.json(data))
     .catch(err => res.json(err))
