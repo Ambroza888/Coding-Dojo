@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   ngOnInit(){
     this.newUrl = {url:'',bakerName:''};
     this.getCakes();
-    this.review = {comment:'',rating:5}
+    this.review = {comment:'Type your comment here',rating:5}
   }
 
   takingUrl(){

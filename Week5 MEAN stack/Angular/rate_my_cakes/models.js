@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/restful_task_API', {useNewUrlParser: true});
 
 const ReviewSchema = new mongoose.Schema({
-  comment:String,
-  rating: {type:Number},
+  comment:{type:String,minlength:1},
+  rating: {type:Number,required:true},
 },{timestamps:true})
 
 const CakeSchema = new mongoose.Schema({

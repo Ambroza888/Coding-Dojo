@@ -2,7 +2,7 @@ const Cake = require('./models')
 module.exports = {
 
   index: function(req,res){
-      Cake.find()
+      Cake.find().sort('-createdAt')
       .then(data => res.json(data))
       .catch(err => res.json(err));
   },

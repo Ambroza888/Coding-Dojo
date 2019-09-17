@@ -1,0 +1,19 @@
+<div *ngIf='the_cake' class="container mt-5 mb-5 border border-primary">
+    <h2>Baked by {{the_cake.bakerName}}</h2>
+    <div class="row">
+      <div class="col">
+        <img src="{{the_cake.url}}" alt="broke" width="300px">
+      </div>
+      <div class="col">
+        <h5>Average rating:</h5>
+        <div *ngFor='let review of the_cake.reviews'>
+          <p>{{review.comment}}</p>
+          <p *ngIf='review.rating == 5'>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p *ngIf='review.rating == 4'>&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+          <p *ngIf='review.rating == 3'>&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+          <p *ngIf='review.rating == 2'>&#9733;&#9733;&#9734;&#9734;&#9734;</p>
+          <p *ngIf='review.rating == 1'>&#9733;&#9734;&#9734;&#9734;&#9734;</p>
+        </div>
+      </div>
+    </div>
+  </div>
