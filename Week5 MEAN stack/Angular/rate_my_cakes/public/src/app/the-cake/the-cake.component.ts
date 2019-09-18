@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TheCakeComponent implements OnInit {
 @Input() the_cake:any;
+@Input() avgSum:any;
   constructor() { }
 
   ngOnInit() {

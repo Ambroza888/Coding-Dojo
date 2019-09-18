@@ -16,19 +16,22 @@ export class AppComponent implements OnInit{
   allCakes:any
   review:any;
   the_cake:any;
-  
+  errors:any;
+  avgSum:any;
   ngOnInit(){
     this.newUrl = {url:'',bakerName:''};
     this.getCakes();
-    this.review = {comment:'Type your comment here',rating:5}
+    this.review = {comment:'Type your comment here',rating:''}
   }
 
   takingUrl(){
     let obs = this._httpService.takingUrl(this.newUrl)
     obs.subscribe(data =>{
-      console.log(`The URL going to backend is --- >${data}`)
+      // console.log(data['message'])
       this.newUrl = {url:'',bakerName:''}
       this.getCakes();
+      this.errors = data['message'].split(',')
+      // console.log(this.errors)
     })
   }
   getCakes(){
@@ -42,12 +45,18 @@ export class AppComponent implements OnInit{
     obs.subscribe(data=>{
       console.log(data)
       this.review = {comment:'',rating:''}
+
     })
   }
   showTheCake(id){
     let obs = this._httpService.showTheCake(id)
     obs.subscribe(data=>{
-      console.log(data)
+      let temp = data['reviews']
+      let sum = 0
+      for (var i in temp){
+        sum = sum + (temp[i]['rating'])
+      }
+      this.avgSum = sum/temp.length
       this.the_cake = data
     })
   }
