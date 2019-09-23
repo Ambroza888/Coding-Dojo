@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Sockets</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+    
+            var socket = io(); //1
+    
+        //     socket.on('greeting', function (data) { //4
+        //         console.log(data.msg); //5
+        //         socket.emit('thankyou', { msg: 'Thank you for connecting me! -Client' }); //6
+        //     });
+
+          $('.pusher').click(function(){
+            socket.emit('hit')
+          })
+
+          socket.on('hitback', function(data){
+            console.log(data)
+            $('.main').text(`The Button has been pushed ${data} times(s)`)
+          })
+          
+          $('.depusher').click(function(){
+            socket.emit('refresh')
+          })
+          socket.on('refreshing', (data)=>{
+            console.log(data)
+            $('.main').text(`The Button has been pushed ${data} times(s)`)
+          })
+
+        })
+    </script>
+</head>
+<body>
+  
+  <div class="container">
+    <h1 class="main"></h1>
+    <div style="margin-left:400px">
+      <p>Push the button to update the count!</p>
+      <button  class="pusher" style='padding: 30px; background-color: blue; font-size: 23px; border-radius: 10px'>
+        Push the Epic button
+      </button>
+    </div>
+    <div style='margin-left:800px; margin-top: 300px'>
+      <button class='depusher' style="background-color: red; font-size: 14px; padding:12px">Reset Count!</button>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+</html>
