@@ -27,11 +27,13 @@
 
         socket.on('updated_message',(data)=>{
           console.log(data)
-          $('#testit').html(data.name)
+          var mypapi = JSON.stringify(data)
+          $('#testit').html("You emitted the folowing information to the server: "+mypapi)
         })
+
         socket.on('random_number', (data)=>{
           console.log(data.num)
-          $('#theP').html(data.num)
+          $('#theP').html("Your lucky number emitted by the server is  "+data.num)
         })
         
         
@@ -45,8 +47,10 @@
     </script>
 </head>
 <body>
-    <p id="testit"></p>
-  <p id="theP"></p>
+  <div style="background-color: pink; width:700px;">
+      <p id="testit"></p>
+      <p id="theP"></p>
+    </div>
   <form id="form">
     <p>Your name: <input type="text" id="name"></p>
     <p>Dojo Location: 
