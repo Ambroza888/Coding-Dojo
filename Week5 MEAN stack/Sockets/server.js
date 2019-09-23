@@ -16,6 +16,6 @@ io.on('connection', function (socket) { //2
 
   socket.on('posting_form', function(data){
     console.log(data)
-    socket.emit('updated_message',{ msg: "whawtqwe"})
+    socket.emit('updated_message', data)
   })
 });
