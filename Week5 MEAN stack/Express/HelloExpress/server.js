@@ -4,7 +4,7 @@ app.use(express.static(__dirname + "/static"));
 app.set('view engine', "ejs");
 app.set('views',__dirname + '/views')
 
-app.use
+app.use + ('/views')
 
 app.get('/', (request,response) => {
   response.send("Hello Express PAPICHULIO");
