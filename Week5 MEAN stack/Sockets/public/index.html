@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Sockets</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+    
+            var socket = io(); //1
+    
+            socket.on('greeting', function (data) { //4
+                console.log(data.msg); //5
+                console.log(data)
+                socket.emit('thankyou', { msg: 'Thank you for connecting me! -Client' }); //6
+            });
+
+        $('#form').submit(function(e){
+          e.preventDefault();
+          socket.emit('posting_form', {
+            name: $('#name').val(),
+            location:$('#location').val(),
+            language:$('#language').val(),
+            comment: $('#comment').val(),
+          })
+        });
+
+        socket.on('updated_message',function(data){
+          console.log(data)
+          $('.testit').html(data);
+          socket.emit('done');
+        })
+        // socket.on('random_number',function(data){
+        //   console.log(data)
+        //   $('#theP').html(data.num).append()
+        // })
+      
+      
+      })
+    </script>
+</head>
+<body>
+  <p id="theP"></p>
+  <form id="form">
+    <p>Your name: <input type="text" id="name"></p>
+    <p>Dojo Location: 
+      <select name="" id="location">
+        <option value="Seattle">Seattle</option>
+        <option value="California">California</option>
+      </select>
+    </p>
+    <p>Favorite Language:
+      <select name="" id="language">
+        <option value="Python">Python</option>
+        <option value="C##">C##</option>
+      </select>
+    </p>
+    <textarea name="" cols="30" rows="5" id="comment"></textarea><br>
+    <input type="submit" name="" value="SUBMIT!">
+  </form>
+
+  <p class="testit"></p>
+    
+    
+</body>
+</html>
