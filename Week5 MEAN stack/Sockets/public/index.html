@@ -8,14 +8,15 @@
     
             var socket = io(); //1
     
-            socket.on('greeting', function (data) { //4
-                console.log(data.msg); //5
-                console.log(data)
-                socket.emit('thankyou', { msg: 'Thank you for connecting me! -Client' }); //6
-            });
+        //     socket.on('greeting', function (data) { //4
+        //         console.log(data.msg); //5
+        //         console.log(data)
+        //         socket.emit('thankyou', { msg: 'Thank you for connecting me! -Client' }); //6
+        //     });
 
         $('#form').submit(function(e){
           e.preventDefault();
+          // console.log(e)
           socket.emit('posting_form', {
             name: $('#name').val(),
             location:$('#location').val(),
@@ -24,21 +25,27 @@
           })
         });
 
-        socket.on('updated_message',function(data){
+        socket.on('updated_message',(data)=>{
           console.log(data)
-          $('.testit').html(data);
-          socket.emit('done');
+          $('#testit').html(data.name)
         })
+        socket.on('random_number', (data)=>{
+          console.log(data.num)
+          $('#theP').html(data.num)
+        })
+        
+        
         // socket.on('random_number',function(data){
-        //   console.log(data)
-        //   $('#theP').html(data.num).append()
-        // })
-      
-      
+          //   console.log(data)
+          //   $('#theP').html(data.num).append()
+          // })
+          // $('.testit').html(data);
+          // socket.emit('done');
       })
     </script>
 </head>
 <body>
+    <p id="testit"></p>
   <p id="theP"></p>
   <form id="form">
     <p>Your name: <input type="text" id="name"></p>
@@ -58,7 +65,6 @@
     <input type="submit" name="" value="SUBMIT!">
   </form>
 
-  <p class="testit"></p>
     
     
 </body>
