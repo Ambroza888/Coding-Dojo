@@ -7,7 +7,7 @@ var counter = 0;
     
 io.on('connection', function (socket) { //2
   
-  socket.emit('greeting', { msg: "warap STAZ"}); //3
+  socket.emit('greeting', { msg: "wyoyoyo"}); //3
   socket.on('thankyou', function (data) { //7
     console.log(data.msg); //8 (note: this log will be on your server's terminal)
   });
