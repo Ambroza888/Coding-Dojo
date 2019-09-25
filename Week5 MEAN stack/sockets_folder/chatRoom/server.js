@@ -26,13 +26,15 @@ io.on('connection', function (socket) { //2
     io.emit('announs', {data, users: users})
   })
   socket.on('disconnect', function(data){
+    io.emit('leavingPlayer',{name:socket.name})
     for (let i of users){
       if (i == socket.name){
         users.pop(i)
       }
     }
-    console.log("the users",users)
+    // console.log("the users",users)
     io.emit('leftOversUsers', users)
+
   })
   socket.on('messageToServer', (data)=>{
     // console.log(data)

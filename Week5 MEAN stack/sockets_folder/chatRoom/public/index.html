@@ -19,7 +19,7 @@
     
 
         socket.on('announs',function(data){
-            console.log(data)
+            // console.log(data)
             $('.announsmentName').html(`${data.data.name} has join the chat`)
             $('.users_online').empty()   
             for (var u of data.users){
@@ -28,22 +28,27 @@
         })
 
         socket.on('leftOversUsers',function(data){
-            console.log("datatatat",data)
+            // console.log("datatatat",data)
             $('.users_online').empty()   
             for (var u of data){
                 $('.users_online').append("<li>" + u + "</li>")   
             }
-            $('announsmentName')
         })
+                socket.on('leavingPlayer',(data)=>{
+                    // console.log(data)
+                    $('.left').html(`${data.name}:  has left the chat !!!!`)
+
+                })
         
         $('.form').submit((e)=>{
             e.preventDefault()
             socket.emit('messageToServer', {
                 message:$('.message').val()
             })
+            $('.message').val('')
         })
         socket.on('messageToClient', (data)=>{
-            console.log('we got the data',data)
+            // console.log('we got the data',data)
             $('.Chronology').prepend('<li>'+data.user+" said: " + data.data.message+ '</li>')
         })
         
@@ -55,7 +60,7 @@
     </script>
 </head>
 <body>
-    <p class="announsmentName"></p> 
+    <p class="announsmentName" style="color: green"></p> 
 <div>
     <ul class="users_online"></ul>
 </div>
@@ -66,6 +71,7 @@
     <input type="text" class="message">
     <button>Sent</button>
 </form>
+<p style="color: red" class="left"></p>
 
 
 </body>
