@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
 }
 
 getalltasks(){
-  let tempObservable = this._httpService.getTasks();
+  let tempObservable = this._httpService.getTasks(); 
   tempObservable.subscribe(data => {
     // console.log('Got our Tasks VESKU!',data);
     this.alltasks= data;
