@@ -15,7 +15,10 @@
 
   <ul *ngFor='let b of showTasks'>
     
+
     <li>{{b.title}} |||| {{b.description}}<button (click)='taskToShow(b._id)' >Show!</button></li>
+
+    
   </ul>
 
   <!-- <p *ngIf='thetask'> the the title: {{selectedTask.title}} and the description: {{selectedTask.description}}</p> -->
